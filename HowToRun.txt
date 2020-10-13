@@ -1,0 +1,53 @@
+7.	Steps before cloud deployment:
+              We need to change our code a bit so that it works unhindered on the cloud, as well.
+a)	Add a file called ‘gitignore’ inside the ‘reviewScrapper’ folder. This folder contains the list of the files which we don’t want to include in the git repository. My gitignore file looks like:
+.idea
+As I am using PyCharm as an IDE, and it’s provided by the Intellij Idea community, it automatically adds the .idea folder containing some metadata. We need not include them in our cloud app.
+
+b)	Add a file called ‘Procfile’ inside the ‘reviewScrapper’ folder. This folder contains the command to run the flask application once deployed on the server:
+
+web: gunicorn app:app
+Here, the keyword ‘web’ specifies that the application is a web application. And the part ‘app:app’ instructs the program to look for a flask application called ‘app’ inside the ‘app.py’ file. Gunicorn is a Web Server Gateway Interface (WSGI) HTTP server for Python.
+
+c)	Open a command prompt window and navigate to your ‘reviewScrapper’ folder. Enter the command ‘pip freeze > requirements.txt’. This command generates the ‘requirements.txt’ file. My requirements.txt looks like:
+
+
+
+
+
+Deployment steps
+
+#git init
+#create a simple file from any 	of the text editor name is as .gitignore
+#Whatever file you dont want to push on github repo. add there names inside .gitignore 
+#git status
+#git add .
+#git commmit 
+
+#heroku login
+#heroku create
+#git remote -v
+#git push heroku master
+
+
+
+#update the change
+
+$ heroku login
+Clone the repository
+Use Git to clone nameless-oasis-21433's source code to your local machine.
+
+$ heroku git:clone -a nameless-oasis-21433
+$ cd nameless-oasis-21433
+Deploy your changes
+Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+
+
+
+
+
+
